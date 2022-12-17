@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import altair as alt
+from st_aggrid import AgGrid
 
 st.set_page_config(layout="wide")
 st.title("Ultimate Fighting Bets Prediction and Analysis Tool")
@@ -55,11 +56,13 @@ with col7:
     st.markdown("**-Combat Score combines all Stats of a Fighter**")
     st.markdown("**-Calculate EV using individual Bet Size and Odds**")
 
-col8.subheader("Fighter Dataset")
+
 df= pd.read_csv('final.csv')
 df= df.drop(columns =['Unnamed: 0'])
 
-col8.write(df)
+with col8:
+     st.subheader("Fighter Dataset")
+     AgGrid(df)
 
 
 col1,col2 = st.columns([2,3])
