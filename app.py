@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import altair as alt
-from st_aggrid import AgGrid
+
 
 st.set_page_config(layout="wide")
 st.title("Ultimate Fighting Bets Prediction and Analysis Tool")
