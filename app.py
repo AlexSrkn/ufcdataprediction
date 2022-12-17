@@ -62,7 +62,7 @@ df= df.drop(columns =['Unnamed: 0'])
 
 with col8:
      st.subheader("Fighter Dataset")
-     AgGrid(df)
+     st.write(df)
 
 
 col1,col2 = st.columns([2,3])
