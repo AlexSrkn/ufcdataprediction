@@ -79,9 +79,9 @@ col1.write(df.describe().T)
 
 
 #correlation Heatmap
-df.corr()
+numeric_df = df.select_dtypes(include=[np.number])
 fig = plt.figure(figsize=(10,4))
-heatmap = sns.heatmap(df.corr(), vmin=-1, vmax=1, annot=True)
+heatmap = sns.heatmap(numeric_df.corr(), vmin=-1, vmax=1, annot=True)
 heatmap.set_title('FighterStats', fontdict = {'fontsize':16}, pad =12);
 
 col2.subheader("Correlation Matrix")
